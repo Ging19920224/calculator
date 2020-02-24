@@ -1,0 +1,99 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* border: 1px solid black; */
+}
+
+/**********************
+wrap
+**********************/
+.wrap{
+  width: 1280px;
+  height: 800px;
+  background: #E8E8E8 0% 0% no-repeat padding-box;
+  margin: 0 auto;
+  padding-top: 129px;
+}
+.box{
+  width: 350px;
+  height: 525px;
+  background: #062145 0% 0% no-repeat padding-box;
+  box-shadow: 0px 20px 40px #00000066;
+  border-radius: 20px;
+  margin: 0 auto;
+}
+.screen{
+  width: 350px;
+  height: 109px;
+  background: #041936 0% 0% no-repeat padding-box;
+  border-radius: 20px 20px 0px 0px;
+  padding: 16px 19px 5px 19px;
+  opacity: 1;
+}
+.show-s{
+  width: auto;
+  height: 19px;
+  text-align: right;
+  font-family: 'Roboto';
+  font-size: 16px;
+  letter-spacing: 0;
+  color: #00C4FF;
+  overflow: hidden;
+}
+.show-l{
+  width: auto;
+  height: 66px;
+  text-align: right;
+  font-family: 'Roboto';
+  font-size: 56px;
+  color: #FFFFFF;
+}
+.keyboard-box{
+  width: 100%;
+  height: 416px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+.keyboard{
+  width: 72px;
+  height: 64px;
+  line-height: 64px;
+  text-align: center;
+  border-radius: 16px;
+  cursor: pointer;
+}
+.square{
+  background: #041936 0% 0% no-repeat padding-box;
+}
+.keyboard:active{
+  background-color: rgb(163, 143, 98);
+}
+.result{
+  width: 155px;
+  height: 64px;
+  background: transparent linear-gradient(90deg, #00C4FF 0%, #6C00FF 100%) 0% 0% no-repeat padding-box;
+  border-radius: 16px;
+  position: relative;
+  cursor: pointer;
+}
+.result:active{
+  background: transparent linear-gradient(360deg, #00C4FF 0%, #6C00FF 100%) 0% 0% no-repeat padding-box;
+}
+.result-font{
+  position: absolute;
+  top: 50%;
+  right: 26px;
+  transform: translateY(-50%);
+}
+.color-w, .color-b{
+  color: #FFFFFF;
+  font-family: Roboto;
+  font-size: 24px;
+}
+.color-b{
+  color: #00C4FF;
+}
