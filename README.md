@@ -11,5 +11,5 @@
   * JavaScript ES6
 
 ## 開發過程與心得
-  [Mediue
+  [Medium
     ](https://medium.com/@xa5566xa5566/js%E5%9C%B0%E4%B8%8B%E5%9F%8E-3f-%E8%A8%88%E7%AE%97%E6%A9%9F-7133b5584e89)
