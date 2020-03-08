@@ -106,27 +106,19 @@ new Vue({
     input(number, type) {
       const vm = this;
       if (number === '.') { 
-        if(vm.isFloat){
-          return
-        }else{
-          vm.isFloat = true 
-        }
+        if (vm.isFloat) return
+        else vm.isFloat = true 
       }
       switch (type) {
         case 'number':
-          if (vm.filter > 99999999) {
-            return
-          } else {
-            if (!vm.lengthCheck) {
-              if (vm.inputNumber.status !== 'number') {
-                vm.inputNumber.value = '';
-                vm.inputNumber.status = 'number';
-              }
-              if (vm.actionMode === 'result') {
-                vm.valueArray = [];
-              }
-              vm.inputNumber.value += number;
+          if (vm.filter > 99999999) return;
+          if (!vm.lengthCheck) {
+            if (vm.inputNumber.status !== 'number') {
+              vm.inputNumber.value = '';
+              vm.inputNumber.status = 'number';
             }
+            if (vm.actionMode === 'result') vm.valueArray = [];
+            vm.inputNumber.value += number;
           }
           break
         case 'add':
@@ -136,9 +128,7 @@ new Vue({
             vm.updateOperator(vm.actionMode);
           } else {
             vm.resetProcess(number);
-            if (vm.valueArray.length === 2) {
-              vm.compute();
-            }
+            if (vm.valueArray.length === 2) vm.compute();
             vm.actionMode = 'add';
           }
           break
@@ -149,9 +139,7 @@ new Vue({
             vm.updateOperator(vm.actionMode);
           } else {
             vm.resetProcess(number);
-            if (vm.valueArray.length === 2) {
-              vm.compute();
-            }
+            if (vm.valueArray.length === 2) vm.compute();
             vm.actionMode = 'less';
           }
           break
@@ -162,9 +150,7 @@ new Vue({
             vm.updateOperator(vm.actionMode);
           } else {
             vm.resetProcess(number);
-            if (vm.valueArray.length === 2) {
-              vm.compute();
-            }
+            if (vm.valueArray.length === 2) vm.compute();
             vm.actionMode = 'multiply';
           }
           break
@@ -174,9 +160,7 @@ new Vue({
             vm.updateOperator(vm.actionMode);
           } else {
             vm.resetProcess(number);
-            if (vm.valueArray.length === 2) {
-              vm.compute();
-            }
+            if (vm.valueArray.length === 2) vm.compute();
             vm.actionMode = 'except';
           }
           break
@@ -254,16 +238,13 @@ new Vue({
     },
     result() {
       const vm = this;
-      if(vm.actionMode === 'result') {
-        return;
-      } else {
-        vm.compute();
-        vm.process = '';
-        vm.valueArray = [];
-        vm.valueArray.push(vm.inputNumber.value);
-        vm.actionMode = 'result';
-        vm.isFloat = false;
-      }
+      if(vm.actionMode === 'result') return;
+      vm.compute();
+      vm.process = '';
+      vm.valueArray = [];
+      vm.valueArray.push(vm.inputNumber.value);
+      vm.actionMode = 'result';
+      vm.isFloat = false;
     },
     compute() {
       const vm = this;
@@ -294,7 +275,7 @@ new Vue({
       let numArr = num[0].split('').reverse();
       let idx = 0;
       let returnArr = [];
-      numArr.forEach(function(item){
+      numArr.forEach((item) => {
         idx ++;
         if (idx > 3) {
           idx = 1;
@@ -305,14 +286,11 @@ new Vue({
       const resultFont = returnArr.reverse().join('');
       const result = resultFont + '.' + num[1];
       const resultFontFloat = resultFont + '.';
-      if (!num[1]) {
-        if (vm.isFloat) {
-          return resultFontFloat;
-        } else {
-          return resultFont;
-        }
+      if (num[1]) return result;
+      if (vm.isFloat) {
+        return resultFontFloat;
       } else {
-        return result;
+        return resultFont;
       }
     },
     lengthCheck() {
